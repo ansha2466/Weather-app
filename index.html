@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🌤 Weather Dashboard</h1>
+            <button id="themeToggle">🌙 Dark Mode</button>
+        </header>
+
+        <section class="search-section">
+            <h2>Check Weather</h2>
+
+            <form id="searchForm">
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Enter city name..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit">Search</button>
+            </form>
+
+            <div id="suggestions"></div>
+        </section>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <p id="errorMessage" class="error"></p>
+
+        <section id="weatherSection" class="hidden">
+
+            <div class="weather-card">
+
+                <div class="weather-top">
+                    <div>
+                        <h2 id="cityName"></h2>
+                        <p id="weatherDescription"></p>
+                    </div>
+
+                    <img id="weatherIcon" src="" alt="Weather icon">
+                </div>
+
+                <h1 id="temperature"></h1>
+
+                <p id="feelsLike"></p>
+
+                <div class="weather-details">
+
+                    <div>
+                        <span>💧</span>
+                        <p>Humidity</p>
+                        <h3 id="humidity"></h3>
+                    </div>
+
+                    <div>
+                        <span>💨</span>
+                        <p>Wind Speed</p>
+                        <h3 id="windSpeed"></h3>
+                    </div>
+
+                </div>
+
+                <button id="favoriteBtn">
+                    ⭐ Add to Favorites
+                </button>
+
+            </div>
+
+            <h2 class="section-title">5-Day Forecast</h2>
+
+            <div id="forecastContainer" class="forecast-container"></div>
+
+        </section>
+
+        <section class="favorites-section">
+
+            <h2>⭐ Favorite Cities</h2>
+
+            <div id="favoritesList">
+                <p>No favorite cities yet.</p>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
